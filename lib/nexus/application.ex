@@ -14,9 +14,9 @@ defmodule Nexus.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Nexus.PubSub},
       # Start the Endpoint (http/https)
-      NexusWeb.Endpoint
-      # Start a worker by calling: Nexus.Worker.start_link(arg)
-      # {Nexus.Worker, arg}
+      NexusWeb.Endpoint,
+      # Start the MQTT consumer
+      Nexus.MQTT.Supervisor
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
